@@ -13,9 +13,15 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      
     }
-  }
+  },
+  ready(){
+  	console.log('加载完成');
+  },
+	mounted(){
+		console.log('跳转');
+	}
 }
 </script>
 

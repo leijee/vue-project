@@ -5,10 +5,12 @@ import Login from '@/components/Login'
 import Regist from '@/components/Regist'
 import First from '@/components/First'
 import Second from '@/components/Second'
+import MyInfo from '@/components/MyInfo'
 
 Vue.use(Router)
 
 export default new Router({
+	name:'route',
   routes: [
     {
       path: '/',
@@ -34,6 +36,11 @@ export default new Router({
     	path:'/regist',
     	name:'Regist',
     	component:Regist
+    },
+    {
+    	path:'/myInfo',
+    	name:'MyInfo',
+    	component:MyInfo
     }
   ]
 })
