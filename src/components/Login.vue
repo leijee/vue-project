@@ -23,6 +23,7 @@
 <script>
 	import myHeader from './header'
 	import {l_store,checkLogin} from '../config/mUtil'
+	
 	export default {
 		components:{myHeader},
 	  name: 'Login',
@@ -52,6 +53,7 @@
 	  		var defaultPwd = this.defaultPassword;
 	  		var acc = this.userAccount;
 	  		var pwd = this.password;
+	  		
 	  		if(acc==""){
 	  			if(pwd != ""){
 	  				this.passwordTip = '';
@@ -79,7 +81,7 @@
 	  				l_store.setStore('userImg',this.userImg);
 	  				l_store.setStore('userAccount',this.userAccount);
 	  				l_store.setStore('userPassword',this.userPassword);
-	  				this.$router.push({ path: 'first'});//编程式跳转,(<route-link to>声明式跳转.路由两种跳转方式)
+	  				this.$router.push({ path: 'index'});//编程式跳转,(<route-link to>声明式跳转.路由两种跳转方式)
 	  				this.accountTip = '';
 	  				this.passwordTip = '';
 	  			}else{
@@ -97,7 +99,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 	
 	.textLeft{
 		text-align: left;
@@ -117,21 +119,4 @@
 	label.rows{
 		text-align: left;
 	}
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>

@@ -1,13 +1,17 @@
 <template>
-  <div id="app">
+  <div id="app" style="padding-bottom: 2rem;">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+	import Vue from 'vue'
+	
+	import LazyLoad from './javascripts/lazyload'
+	Vue.use(LazyLoad);
+	export default {
+	  name: 'app'
+	}
 </script>
 
 <style scoped>

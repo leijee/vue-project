@@ -1,7 +1,8 @@
 <template>
 	<div class="myInfo">
 		<my-header isBack="true" v-bind:type="login" title="用户信息"></my-header>
-		<img class="headImg" v-bind:src="userImg">
+		<img class="headImg"  v-for="n in 40" v-lazyload="userImg" v-bind:src="userImg">
+		
 		<div class="smp-form bottom-loginOut">
 			<input type="button" @click="loginOut" class="btn btn-danger" autofocus value="退出登录"/>
 		</div>
@@ -11,6 +12,7 @@
 <script>
 	import myHeader from './header'
 	import {l_store,checkLogin} from '../config/mUtil'
+	
 	export default {
 		name:'MyInfo',
 		components:{myHeader},
@@ -22,6 +24,7 @@
 		},
 		created(){
 			console.log('test');
+			
 		  	var token = l_store.getStore('token');
 		  	if(token){
 		  		this.userImg = l_store.getStore('userImg');
@@ -38,8 +41,14 @@
 
 <style>
 	.bottom-loginOut{
-		position: absolute;
+		position: fixed;
 		left: 0;
 		bottom: 0;
+		margin: 0;
+		padding: 0;
+	}
+	.bottom-loginOut input{
+		margin: 0;
+		padding: 0;
 	}
 </style>

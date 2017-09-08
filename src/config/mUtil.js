@@ -27,7 +27,7 @@ export const checkLogin = {
 		var token = l_store.getStore('token');
 	  	console.log(token);
 	  	if(token){//如果已登录，跳转
-	  		self.$router.push({path:'/first'});
+	  		self.$router.push({path:'/index'});
 	  	}
 	}
 }
